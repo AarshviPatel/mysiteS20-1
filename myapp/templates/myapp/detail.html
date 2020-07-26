@@ -1,0 +1,12 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+   <h2>List of Courses ::</h2>
+    <ol>
+        {% for i in all_courses %}
+            <li> {{ i }} </li>
+        {% endfor %}
+    </ol>
+
+<p><a href="{% url 'myapp:index' %}">Index Page</a></p>
+
+{% endblock %}

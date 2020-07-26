@@ -1,0 +1,13 @@
+{% extends 'myapp/base.html' %}
+
+{% block body_block %}
+    {%  for course in courlist %}
+        {{ course }}<br>
+    {% endfor %}
+
+    <form method="POST" >
+    {% csrf_token %}
+        {{ form.as_p }}
+    <input type="submit" value="Save"/>
+    </form>
+{% endblock %}

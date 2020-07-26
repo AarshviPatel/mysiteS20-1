@@ -1,0 +1,16 @@
+.hbar1 {
+ display: inline;
+ margin: 15px;
+}
+
+h1 {
+ font-size: medium;
+ color: blueviolet;
+ font-style: normal;
+ position: center;
+}
+
+body{
+ background-color: azure;
+ text-decoration-color: black;
+}

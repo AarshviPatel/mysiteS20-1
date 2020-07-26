@@ -1,0 +1,21 @@
+{% extends 'myapp/base.html' %}
+{% block body_block %}
+    <h3> First Name: {{ first_name }} </h3>
+    <h3>Last Name: {{ last_name }}</h3>
+    <h3>List of Courses Ordered:</h3>
+    <ol>
+        {% for i in ordered_course %}
+            <li> {{ i }} </li>
+        {% endfor %}
+    </ol>
+
+    <h3>List of Interested Topics:</h3>
+    <ol>
+        {% for i in interested %}
+            <li> {{ i }} </li>
+        {% endfor %}
+    </ol>
+
+    <p><a href="{% url 'myapp:index' %}">Index Page</a></p>
+
+{% endblock %}
