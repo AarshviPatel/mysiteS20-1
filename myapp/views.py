@@ -11,6 +11,7 @@ from .forms import *
 def index(request):
     top_list = Topic.objects.all().order_by('id')[:10]
     course_list = Course.objects.all().order_by('-price')[:5]
+    request.session.set_test_cookie()
     return render(request, 'myapp/index.html', {'top_list': top_list, 'course_list': course_list})
 
 
@@ -34,6 +35,9 @@ def index(request):
 
 def about(request):
     data = "This is an E-Learning WebApp! Search our Topics to find all available Courses."
+    if request.session.test_cookie_worked():
+        return HttpResponse("Test Cookie worked")
+        request.session.delete_test_cookie()
     return render(request, 'myapp/about.html', {'data': data})
 
 
